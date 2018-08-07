@@ -1,5 +1,12 @@
-####problem 1####
-##how to drop tables with foreign key constraints##
+####how to drop tables with foreign key constraints####
 SELECT *
 from information_schema.KEY_COLUMN_USAGE
 WHERE REFERENCED_TABLE_NAME = 'auth_user';
+
+
+####VIEW in MySQL####
+There are two ways to create views in MySQL:
+The first way: MySQL creates a temporary table based on the view definition statement and executes the incoming query on this temporary table.
+The second way: MySQL combines the incoming query with the query defined the view into one query and executes the combined query.
+
+##So temporary query result can be stored in the view tables.##
