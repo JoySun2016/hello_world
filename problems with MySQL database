@@ -1,0 +1,5 @@
+####problem 1####
+##how to drop tables with foreign key constraints##
+SELECT *
+from information_schema.KEY_COLUMN_USAGE
+WHERE REFERENCED_TABLE_NAME = 'auth_user';
