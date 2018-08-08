@@ -10,3 +10,6 @@ The first way: MySQL creates a temporary table based on the view definition stat
 The second way: MySQL combines the incoming query with the query defined the view into one query and executes the combined query.
 The difference between views and tables is that views are built on top of other tables and do not contain data themselves. If data is changed 
 in relevant tables, then this change will be reflected in views.
+
+####how to create table like another table in a different database####
+use the migration function in MySQL Workbench
