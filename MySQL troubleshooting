@@ -1,0 +1,4 @@
+####chapter 1 Basics####
+##problem 1: keyword of mysql##
+The variable name may be a reserved word for mysql syntax, so that we need to add quotes (these can be backticks or double quotes, depending on your
+SQL mode) in order to query the variable.
