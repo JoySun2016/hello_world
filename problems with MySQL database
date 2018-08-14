@@ -13,3 +13,6 @@ in relevant tables, then this change will be reflected in views.
 
 ####how to create table like another table in a different database####
 use the migration function in MySQL Workbench
+
+####how to rename a column in mysql 5.5.61####
+ALTER TABLE tb1 CHANGE `oldcol` `newcol` datatype(length);
