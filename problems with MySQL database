@@ -16,3 +16,19 @@ use the migration function in MySQL Workbench
 
 ####how to rename a column in mysql 5.5.61####
 ALTER TABLE tb1 CHANGE `oldcol` `newcol` datatype(length);
+
+####different join statement####
+1. left join / right join:(select * from table A left/right join table B on A.key = B.key)
+the left/right table is fully returned, with null values in the unmatched columns of the other table. 
+For left join, the rows that exist in table right but not in table left will not appear in the result;
+2. inner join: the exact matched rows of both tables on the matching criterion;But the common columns would appear repeatedly.
+3. cross join (Cartesian Product): returns all the possible combinations.So there will be no matching criterion, no where or on clause.
+4. natural join: the number of columns will be fewer than that of inner join. The common columns of both tables would just appear once. 
+5. full join: the different point from cross join is that cross join just returns all possibilities, but full join still uses a matching statement,
+i.e. where or on clause, then return all matched rows and fulfill blank columns with NULL.
+
+6. select * from table A left/right join table B on A.key = B.key where B.key / A.key is NULL;
+this will return all the rows in A/B except the common rows of both tables.
+
+7. select * from table A full join table B on A.key = B.key where A.key is NULL or B.key is NULL.
+this will return all the rows of A and B except the common rows of both tables.
