@@ -35,3 +35,9 @@ this will return all the rows of A and B except the common rows of both tables.
 
 8. how to grant ownership to myself in order to open mysql folder:
 sudo chown ctrisksoln /var/lib/mysql
+
+9.how to update table column using data from another table
+update t1 
+inner join t2 on t1.key = t2.key
+set t1.value = IF(t1.value > 0, t1.value, t2.value)
+where t1.name = 'Joe'
