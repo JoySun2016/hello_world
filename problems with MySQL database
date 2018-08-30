@@ -41,3 +41,6 @@ update t1
 inner join t2 on t1.key = t2.key
 set t1.value = IF(t1.value > 0, t1.value, t2.value)
 where t1.name = 'Joe'
+
+10. delete certain rows in one table with their keys in another table
+delete from t1 where key in (select key from t2);
