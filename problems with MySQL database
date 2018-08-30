@@ -44,3 +44,7 @@ where t1.name = 'Joe'
 
 10. delete certain rows in one table with their keys in another table
 delete from t1 where key in (select key from t2);
+
+11.how to alter the order of columns in mysql
+ALTER TABLE t1 CHANGE COLUMN col1 col1 datatype(length) AFTER col2;
+note that the repitition of col1 is deliberate, in order to tell mysql that the column name keeps unchanged.
