@@ -48,3 +48,7 @@ delete from t1 where key in (select key from t2);
 11.how to alter the order of columns in mysql
 ALTER TABLE t1 CHANGE COLUMN col1 col1 datatype(length) AFTER col2;
 note that the repitition of col1 is deliberate, in order to tell mysql that the column name keeps unchanged.
+
+12.how to copy and remove file in Ubuntu by terminal command
+'rm path/file'  to remove file
+'cp -b path/sourcefile path/destination folder'
