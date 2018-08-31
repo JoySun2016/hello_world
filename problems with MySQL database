@@ -52,3 +52,10 @@ note that the repitition of col1 is deliberate, in order to tell mysql that the 
 12.how to copy and remove file in Ubuntu by terminal command
 'rm path/file'  to remove file
 'cp -b path/sourcefile path/destination folder'
+
+13.how to output csv file with header line
+SELECT 'ColName1', 'ColName2', 'ColName3'
+UNION ALL
+SELECT ColName1, ColName2, ColName3
+    FROM YourTable
+    INTO OUTFILE '/path/outfile'
