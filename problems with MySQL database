@@ -59,3 +59,7 @@ UNION ALL
 SELECT ColName1, ColName2, ColName3
     FROM YourTable
     INTO OUTFILE '/path/outfile'
+14. How to change a column
+ALTER TABLE tb MODIFY COLUMN colname DATATYPE(LENGTH)
+When the column is update time label:
+ALTER TABLE tb MODIFY COLUMN colname TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
