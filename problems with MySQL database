@@ -63,3 +63,10 @@ SELECT ColName1, ColName2, ColName3
 ALTER TABLE tb MODIFY COLUMN colname DATATYPE(LENGTH)
 When the column is update time label:
 ALTER TABLE tb MODIFY COLUMN colname TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+15. how to copy a table with indexes and triggers:
+CREATE TABLE newtable LIKE oldtable; 
+INSERT newtable SELECT * FROM oldtable;
+
+how to copy just data and structure:
+CREATE TABLE tbl_new AS SELECT * FROM tbl_old;
