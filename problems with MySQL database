@@ -70,3 +70,8 @@ INSERT newtable SELECT * FROM oldtable;
 
 how to copy just data and structure:
 CREATE TABLE tbl_new AS SELECT * FROM tbl_old;
+
+16. How to speed up joining?
+!!!!! ADD INDEX !!!!!
+!!!! ADD PRIMARY KEY !!!!
+!!! ADD FOREIGN KEY !!!
