@@ -75,3 +75,7 @@ CREATE TABLE tbl_new AS SELECT * FROM tbl_old;
 !!!!! ADD INDEX !!!!!
 !!!! ADD PRIMARY KEY !!!!
 !!! ADD FOREIGN KEY !!!
+
+17.How to remove the trailing '\r\n' of a row?
+set sql_safe_updates = 0;
+UPDATE tb SET col = REPLACE(col, '\r\n', '');
