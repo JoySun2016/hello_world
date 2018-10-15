@@ -82,3 +82,6 @@ UPDATE tb SET col = REPLACE(col, '\r\n', '');
 
 18.how to concat strings
 concat(string1, string2)
+
+19.how to show the tasks that mysql server is running?
+SHOW FULL PROCESSLIST;
