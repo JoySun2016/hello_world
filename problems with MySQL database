@@ -85,3 +85,6 @@ concat(string1, string2)
 
 19.how to show the tasks that mysql server is running?
 SHOW FULL PROCESSLIST;
+
+20. How to grant all permission of a folder in Linux?
+sudo chmod -R 777 /var/lib/mysql
