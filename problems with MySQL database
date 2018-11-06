@@ -88,3 +88,6 @@ SHOW FULL PROCESSLIST;
 
 20. How to grant all permission of a folder in Linux?
 sudo chmod -R 777 /var/lib/mysql
+
+21.How to solve error 1055?
+SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
