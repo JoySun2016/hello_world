@@ -91,3 +91,6 @@ sudo chmod -R 777 /var/lib/mysql
 
 21.How to solve error 1055?
 SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
+22. How to edit the EER diagram in MySQL Workbench?
+Go to the 'Database' tab, click the 'Reverse Engineer', then choose the schemas and tables you want to have in your EER Diagram, then the diagram will be created.
