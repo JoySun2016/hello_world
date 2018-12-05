@@ -94,3 +94,6 @@ SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 22. How to edit the EER diagram in MySQL Workbench?
 Go to the 'Database' tab, click the 'Reverse Engineer', then choose the schemas and tables you want to have in your EER Diagram, then the diagram will be created.
+
+23. The website for DBS risk rating:
+http://ltdbs.hk.morningstar.com/dbs/FundTool.aspx#iframeid=ContentMain_iFrame1&height=1987&CurrUrl=http%3A//lt.morningstar.com/gvji07hh87/fundquickrank/default.aspx%3FLanguageId%3Den-GB
