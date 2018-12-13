@@ -1,0 +1,99 @@
+####how to drop tables with foreign key constraints####
+SELECT *
+from information_schema.KEY_COLUMN_USAGE
+WHERE REFERENCED_TABLE_NAME = 'auth_user';
+
+
+####VIEW in MySQL####
+There are two ways to create views in MySQL:
+The first way: MySQL creates a temporary table based on the view definition statement and executes the incoming query on this temporary table.
+The second way: MySQL combines the incoming query with the query defined the view into one query and executes the combined query.
+The difference between views and tables is that views are built on top of other tables and do not contain data themselves. If data is changed 
+in relevant tables, then this change will be reflected in views.
+
+####how to create table like another table in a different database####
+use the migration function in MySQL Workbench
+
+####how to rename a column in mysql 5.5.61####
+ALTER TABLE tb1 CHANGE `oldcol` `newcol` datatype(length);
+
+####different join statement####
+1. left join / right join:(select * from table A left/right join table B on A.key = B.key)
+the left/right table is fully returned, with null values in the unmatched columns of the other table. 
+For left join, the rows that exist in table right but not in table left will not appear in the result;
+2. inner join: the exact matched rows of both tables on the matching criterion;But the common columns would appear repeatedly.
+3. cross join (Cartesian Product): returns all the possible combinations.So there will be no matching criterion, no where or on clause.
+4. natural join: the number of columns will be fewer than that of inner join. The common columns of both tables would just appear once. 
+5. full join: the different point from cross join is that cross join just returns all possibilities, but full join still uses a matching statement,
+i.e. where or on clause, then return all matched rows and fulfill blank columns with NULL.
+
+6. select * from table A left/right join table B on A.key = B.key where B.key / A.key is NULL;
+this will return all the rows in A/B except the common rows of both tables.
+
+7. select * from table A full join table B on A.key = B.key where A.key is NULL or B.key is NULL.
+this will return all the rows of A and B except the common rows of both tables.
+
+8. how to grant ownership to myself in order to open mysql folder:
+sudo chown ctrisksoln /var/lib/mysql
+
+9.how to update table column using data from another table
+update t1 
+inner join t2 on t1.key = t2.key
+set t1.value = IF(t1.value > 0, t1.value, t2.value)
+where t1.name = 'Joe'
+
+10. delete certain rows in one table with their keys in another table
+delete from t1 where key in (select key from t2);
+
+11.how to alter the order of columns in mysql
+ALTER TABLE t1 CHANGE COLUMN col1 col1 datatype(length) AFTER col2;
+note that the repitition of col1 is deliberate, in order to tell mysql that the column name keeps unchanged.
+
+12.how to copy and remove file in Ubuntu by terminal command
+'rm path/file'  to remove file
+'cp -b path/sourcefile path/destination folder'
+
+13.how to output csv file with header line
+SELECT 'ColName1', 'ColName2', 'ColName3'
+UNION ALL
+SELECT ColName1, ColName2, ColName3
+    FROM YourTable
+    INTO OUTFILE '/path/outfile'
+14. How to change a column
+ALTER TABLE tb MODIFY COLUMN colname DATATYPE(LENGTH)
+When the column is update time label:
+ALTER TABLE tb MODIFY COLUMN colname TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+15. how to copy a table with indexes and triggers:
+CREATE TABLE newtable LIKE oldtable; 
+INSERT newtable SELECT * FROM oldtable;
+
+how to copy just data and structure:
+CREATE TABLE tbl_new AS SELECT * FROM tbl_old;
+
+16. How to speed up joining?
+!!!!! ADD INDEX !!!!!
+!!!! ADD PRIMARY KEY !!!!
+!!! ADD FOREIGN KEY !!!
+
+17.How to remove the trailing '\r\n' of a row?
+set sql_safe_updates = 0;
+UPDATE tb SET col = REPLACE(col, '\r\n', '');
+
+18.how to concat strings
+concat(string1, string2)
+
+19.how to show the tasks that mysql server is running?
+SHOW FULL PROCESSLIST;
+
+20. How to grant all permission of a folder in Linux?
+sudo chmod -R 777 /var/lib/mysql
+
+21.How to solve error 1055?
+SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
+22. How to edit the EER diagram in MySQL Workbench?
+Go to the 'Database' tab, click the 'Reverse Engineer', then choose the schemas and tables you want to have in your EER Diagram, then the diagram will be created.
+
+23. The website for DBS risk rating:
+http://ltdbs.hk.morningstar.com/dbs/FundTool.aspx#iframeid=ContentMain_iFrame1&height=1987&CurrUrl=http%3A//lt.morningstar.com/gvji07hh87/fundquickrank/default.aspx%3FLanguageId%3Den-GB
