@@ -80,6 +80,9 @@ CREATE TABLE tbl_new AS SELECT * FROM tbl_old;
 set sql_safe_updates = 0;
 UPDATE tb SET col = REPLACE(col, '\r\n', '');
 
+How to remove the trailing space in MySQL field?
+UPDATE FOO set FIELD2 = TRIM(FIELD2);
+
 18.how to concat strings
 concat(string1, string2)
 
