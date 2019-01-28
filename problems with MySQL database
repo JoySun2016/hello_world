@@ -97,3 +97,6 @@ Go to the 'Database' tab, click the 'Reverse Engineer', then choose the schemas 
 
 23. The website for DBS risk rating:
 http://ltdbs.hk.morningstar.com/dbs/FundTool.aspx#iframeid=ContentMain_iFrame1&height=1987&CurrUrl=http%3A//lt.morningstar.com/gvji07hh87/fundquickrank/default.aspx%3FLanguageId%3Den-GB
+
+24. The group by on multiple columns
+group by col1, col2
