@@ -100,3 +100,8 @@ http://ltdbs.hk.morningstar.com/dbs/FundTool.aspx#iframeid=ContentMain_iFrame1&h
 
 24. The group by on multiple columns
 group by col1, col2
+
+25.How to delete the rows in t1 which have the same ID as the rows in t2?
+DELETE t1 
+FROM Table1 t1
+JOIN Table2 t2 ON t1.ID = t2.ID;
